@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Artworks</title>
+
+    <!-- CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+
+</head>
+
+<button onclick="backToTop()" id="backToTopBtn"><i class="fa-regular fa-circle-up backToTop-btn"></i></button>
+<!-- <button id="colorSwitcher" class="colorBtn" onclick="changeColor()">Change Theme</button> -->
+<div class="color-picker">
+    <button id="colorToggle"><i class="fa-solid fa-palette"></i></button>
+    <div id="colorOptions">
+        <span class="color-circle" data-color="#ff9e27" style="background: #ff9e27;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+        <span class="color-circle" data-color="#1e90ff" style="background: #1e90ff;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+        <span class="color-circle" data-color="#32cd32" style="background: #32cd32;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+        <span class="color-circle" data-color="#8a2be2" style="background: #8a2be2;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+        <span class="color-circle" data-color="#e22bb4" style="background: #e22bb4;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+        <span class="color-circle" data-color="#ffff" style="background: #ffff;"
+            onclick="setColor(this.getAttribute('data-color'));"></span>
+    </div>
+</div>
+
+<body>
+    <nav class="navbar">
+        <div class="logo" onclick="home()">A.T.</div>
+        <div class="searchBar"><i class="fa-solid fa-magnifying-glass" style="color: var(--accent-color);"></i> <input placeholder="Search..." id="searchInput"> </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#artworks">Artworks</a></li>
+            <li><button class="login-btn" id="loginBtn"><i class="fa-solid fa-user"
+                        style="font-size: 15px; margin-right: 5px;"></i>
+                    Login</button></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!--ARTWORKS SECTION-->
+    <div class="info">
+        <h5 class="welcome">My Comics</h5>
+        <hr class="line">
+    </div>
+    <div class="container-fluid" id="artworks">
+        <div class="row card-row ">
+            <div class="artworkDisplay" data-title="The Lost Summer" data-date="30/06/2024" data-folder="./images/01"
+                id="artwork1">
+                <div class="card">
+                    <img src="./images/01/0.jpg" alt="Artwork 1">
+                    <h3 class="card-title">The Lost Summer</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> 30/06/2024</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Give Up" data-date="31/03/2025" data-folder="./images/02">
+                <div class="card">
+                    <img src="./images/02/02.png" alt="Artwork 2">
+                    <h3 class="card-title">Give Up</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> 31/03/2025</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Our" data-date="05/04/2025" data-folder="./images/03">
+                <div class="card">
+                    <img src="./images/03/02.png" alt="Artwork 3">
+                    <h3 class="card-title">Our</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> 05/04/2025</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
+                <div class="card">
+                    <img src="./images/04/01.png" alt="Artwork 4">
+                    <h3 class="card-title">Random</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
+                </div>
+            </div>
+
+            <!-- <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
+                <div class="card">
+                    <img src="./images/04/01.png" alt="Artwork 4">
+                    <h3 class="card-title">Random</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
+                <div class="card">
+                    <img src="./images/04/01.png" alt="Artwork 4">
+                    <h3 class="card-title">Random</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
+                <div class="card">
+                    <img src="./images/04/01.png" alt="Artwork 4">
+                    <h3 class="card-title">Random</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
+                </div>
+            </div>
+            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
+                <div class="card">
+                    <img src="./images/04/01.png" alt="Artwork 4">
+                    <h3 class="card-title">Random</h3>
+                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
+                </div>
+            </div> -->
+
+            <div class="artworkDisplay">
+                <div class="card" id="addArtworkCard">
+                    <i class="fa-solid fa-plus addArtwork"></i>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="paginationControls" class="pagination">
+        <button id="prevPage" disabled>&laquo; Prev</button>
+        <span id="pageNumbers"></span>
+        <button id="nextPage">Next &raquo;</button>
+    </div>
+
+    <!--ABOUT SECTION-->
+    <div class="info">
+        <h5 class="welcome">About Me</h5>
+        <hr class="line">
+    </div>
+    <div class="container-fluid" id="about">
+    </div>
+
+</body>
+
+<div class="modal" id="artworkModal" tabindex="-1" role="dialog" aria-labelledby="artworkModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="artworkModalLabel"></h5>
+                <button class="close" data-dismiss="modal" aria-label="Close" id="closeBtn">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <hr class="modal-line">
+            <!-- <div class="modal-body">
+                <img src="./images/01/1.jpg" alt="" id="artworkImage" class="img-fluid mb-3">
+                <p id="artworkDescription"></p>
+            </div> -->
+            <div class="modal-body" id="artworkImagesContainer">
+                <!-- Images will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
