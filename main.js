@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         // AJAX Request to Fetch Images from Folder
         $.ajax({
-            url: "getImages.php",
+            url: "index.php",
             method: "GET",
             data: { folder: folder }, // Send folder name to PHP
             success: function (response) {
