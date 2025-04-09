@@ -245,4 +245,20 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Message Modal
+function openMessageModal(){
+    $("#messageModal").modal("show"); // Show modal
+
+    // Close modal events
+    $("#closeBtn, .close").click(function () {
+        $("#messageModal").modal("hide");
+    });
+
+    $(document).on("click", function (event) {
+        if ($(event.target).hasClass("modal")) {
+            $("#messageModal").modal("hide");
+        }
+    });
+}
+
 
