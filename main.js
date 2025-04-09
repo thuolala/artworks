@@ -1,3 +1,30 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const squares = document.querySelectorAll(".square");
+    const columns = 15; // Number of columns
+    const rows = 5; // Number of rows
+
+    const corners = [0, columns - 1, (rows - 1) * columns, (rows * columns) - 1];
+
+    corners.forEach((index, i) => {
+        if (i === 0) squares[index].style.borderRadius = "10px 0 0 0"; // Top-left
+        if (i === 1) squares[index].style.borderRadius = "0 10px 0 0"; // Top-right
+        if (i === 2) squares[index].style.borderRadius = "0 0 0 10px"; // Bottom-left
+        if (i === 3) squares[index].style.borderRadius = "0 0 10px 0"; // Bottom-right
+    });
+});
+
+function openFacebook() {
+    window.open("https://www.facebook.com/thulovesanji", "_blank"); // Open Facebook page
+}
+
+function openInstagram() {
+    window.open("https://www.instagram.com/thuolala/", "_blank"); // Open Instagram page
+}
+
+function openGithub() {
+    window.open("https://github.com/thuolala", "_blank"); // Open Github page
+}
+
 function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("active");
 }
@@ -246,7 +273,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 // Message Modal
-function openMessageModal(){
+function openMessageModal() {
     $("#messageModal").modal("show"); // Show modal
 
     // Close modal events
@@ -260,5 +287,3 @@ function openMessageModal(){
         }
     });
 }
-
-

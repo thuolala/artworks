@@ -1,3 +1,155 @@
+/* ANIMATION */
+.welcome span {
+    display: inline-block !important;
+    opacity: 1 !important;
+    color: var(--accent-color) !important;
+}
+
+/* MESH */
+.fence {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(15, 1fr); /* Adjust for more/less squares */
+    grid-template-rows: repeat(5, 1fr);
+    margin: auto;
+    background-color: transparent;
+    padding: 5px;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.fence::before {
+    content: "";
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-size: 50px 50px;
+    background-image: linear-gradient(transparent 49px, black 50px), 
+                      linear-gradient(90deg, transparent 49px, black 50px);
+    opacity: 0.3;
+}
+
+/* The Hanging Picture */
+.hanging-container {
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The Hanging String */
+.hanging-container::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    width: clamp(5px, 1vw, 7px);
+    height: clamp(15px, 5vw, 30px);
+    background: white;
+    z-index: 50;
+    border: 2px solid #252423;
+}
+
+/* Picture */
+.hanging-picture {
+    width: clamp(100px, 20vw, 150px);
+    background: white;
+    border: 1px dotted black;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+    transition: transform 2s ease-in-out;
+}
+
+/* Spinning only the picture */
+.hanging-picture:hover {
+    box-shadow: 5px 5px 15px var(--accent-color);
+    animation: slow-spin 4s linear infinite;
+}
+
+.hanging-picture img {
+    border-radius: 50%;
+    width: 100%;
+    display: block;
+}
+
+/* The Social */
+.social-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#facebookContainer{
+    top: clamp(50px, 10vw, 100px);
+    left: 35%;
+}
+
+#instagramContainer{
+    top: clamp(70px, 10vw, 200px);
+    left: 55%;
+}
+
+#githubContainer{
+    top: clamp(30px, 10vw, 50px);
+    left: 75%;
+}
+
+.social-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    z-index: 50;
+    border: 2px solid #252423;
+}
+
+/* Picture */
+.social-picture {
+    width: clamp(50px, 1vw, 70px);
+    border: 1px dotted black;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    transition: transform 2s ease-in-out;
+}
+
+/* Spinning only the picture */
+.social-picture:hover {
+    box-shadow: 5px 5px 15px var(--accent-color);
+}
+
+.social-picture img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes slow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.square {
+    width: clamp(30px, 5vw, 50px);
+    height: clamp(30px, 5vw, 50px);
+    border: 1px dashed var(--accent-color); /* Makes the square visible */
+    opacity: 0.5;
+}
+
+.square:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0px 0px 10px var(--accent-color);
+}
+
 /* COLOR */
 :root {
     --accent-color: #ffff;
@@ -248,7 +400,6 @@ body {
 }
 
 .card-row {
-    /* background-color: red; */
     margin: auto;
     max-width: 1200px;
     height: auto;
@@ -410,7 +561,7 @@ body {
 .modal-body img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-top: 20px;
 }
 
@@ -529,6 +680,7 @@ body {
 
 /*--------------FOOTER--------------*/
 .footer-text {
+    margin-top: 100px;
     text-align: center;
     color: #8f8d8b;
 }

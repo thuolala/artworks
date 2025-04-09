@@ -18,6 +18,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Load main.js after everything is ready -->
+    <script src="./anime.js"></script>
+    <script src="./hanging.js"></script>
     <script src="./main.js"></script>
 
 </head>
@@ -63,7 +68,17 @@
 
     <!--ARTWORKS SECTION-->
     <div class="info">
-        <h5 class="welcome">My Comics</h5>
+        <h5 class="welcome">
+            <span>M</span>
+            <span>y</span>
+            <span>&nbsp;</span>
+            <span>C</span>
+            <span>o</span>
+            <span>m</span>
+            <span>i</span>
+            <span>c</span>
+            <span>s</span>
+        </h5>
         <hr class="line">
     </div>
     <div class="container-fluid" id="artworks">
@@ -144,10 +159,55 @@
 
     <!--ABOUT SECTION-->
     <div class="info">
-        <h5 class="welcome">About Me</h5>
+        <h5 class="welcome">
+            <span>A</span>
+            <span>b</span>
+            <span>o</span>
+            <span>u</span>
+            <span>t</span>
+            <span>&nbsp;</span>
+            <span>M</span>
+            <span>e</span>
+        </h5>
         <hr class="line">
     </div>
+
     <div class="container-fluid" id="about">
+        <div class="fence">
+            <script>
+                const fence = document.querySelector('.fence');
+                for (let i = 0; i < 75; i++) { // 10x10 Grid = 100 squares
+                    let square = document.createElement('div');
+                    square.className = 'square';
+                    fence.appendChild(square);
+                }
+            </script>
+
+            <div class="hanging-container">
+                <div class="hanging-picture">
+                    <img src="./avatar.png" alt="Hanging Artwork">
+                </div>
+            </div>
+
+            <div class="social-container" id="facebookContainer">
+                <div class="social-picture" style="transform: rotate(10deg);" onclick="openFacebook()">
+                    <img src="./facebook.png" alt="Hanging Artwork">
+                </div>
+            </div>
+
+            <div class="social-container" id="instagramContainer">
+                <div class="social-picture" style="transform: rotate(-30deg);" onclick="openInstagram()">
+                    <img src="./instagram.png" alt="Hanging Artwork">
+                </div>
+            </div>
+
+            <div class="social-container" id="githubContainer">
+                <div class="social-picture" style="transform: rotate(40deg);" onclick="openGithub()">
+                    <img src="./github.png" alt="Hanging Artwork">
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer>
