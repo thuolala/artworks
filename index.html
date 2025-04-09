@@ -22,7 +22,7 @@
 
     <!-- Load main.js after everything is ready -->
     <script src="./anime.js"></script>
-    <script src="./hanging.js"></script>
+    <script src="./stuffs.js"></script>
     <script src="./main.js"></script>
 
 </head>
@@ -46,6 +46,8 @@
             onclick="setColor(this.getAttribute('data-color'));"></span>
     </div>
 </div>
+<audio id="audio1" src="./sound/sound1.wav"></audio>
+<audio id="audio2" src="./sound/sound2.wav"></audio>
 
 <body>
     <nav class="navbar">
@@ -276,6 +278,17 @@
         <div class="modal-content">
             <div class="modal-body">
                 <p>LOL!!! Add this for fun :D</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LOL MODAL -->
+<div class="modal" id="lolModal" tabindex="-1" role="dialog" aria-labelledby="lolModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p><i class="fa-solid fa-person-praying" style="font-size: larger;"></i>&nbsp; Sorry :D</p>
             </div>
         </div>
     </div>
