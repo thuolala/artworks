@@ -71,6 +71,25 @@ $(document).ready(function () {
     });
 });
 
+function uploadArtwork() {
+    $("#uploadModal").modal("show"); // Show modal
+
+    document.getElementById("artworkTitle").value = "Unidentified";
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById("artworkDate").value = today;
+
+    // Close modal events
+    $("#closeBtn, .close").click(function () {
+        $("#uploadModal").modal("hide");
+    });
+
+    $(document).on("click", function (event) {
+        if ($(event.target).hasClass("modal")) {
+            $("#uploadModal").modal("hide");
+        }
+    });
+}
+
 // Pagation for artworks
 document.addEventListener("DOMContentLoaded", function () {
     const artworksPerPage = 6; // Number of artworks per page
@@ -205,3 +224,5 @@ window.addEventListener("DOMContentLoaded", function () {
         document.documentElement.style.setProperty("--accent-color", savedColor);
     }
 });
+
+

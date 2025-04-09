@@ -45,7 +45,8 @@
 <body>
     <nav class="navbar">
         <div class="logo" onclick="home()">A.T.</div>
-        <div class="searchBar"><i class="fa-solid fa-magnifying-glass" style="color: var(--accent-color);"></i> <input placeholder="Search..." id="searchInput"> </div>
+        <div class="searchBar"><i class="fa-solid fa-magnifying-glass" style="color: var(--accent-color);"></i> <input
+                placeholder="Search..." id="searchInput"> </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#artworks">Artworks</a></li>
@@ -126,7 +127,7 @@
                 </div>
             </div> -->
 
-            <div class="artworkDisplay">
+            <div class="artworkDisplay" onclick="uploadArtwork()">
                 <div class="card" id="addArtworkCard">
                     <i class="fa-solid fa-plus addArtwork"></i>
                 </div>
@@ -156,6 +157,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="artworkModalLabel"></h5>
+                <!-- <p id="artworkModalDate" style="font-size: 15px; margin-top: 5px; text-align: left; color: white;">AAA</p> -->
                 <button class="close" data-dismiss="modal" aria-label="Close" id="closeBtn">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -167,6 +169,38 @@
             </div> -->
             <div class="modal-body" id="artworkImagesContainer">
                 <!-- Images will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- UPLOAD MODAL -->
+<div class="modal" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row w-100 d-flex justify-content-between align-items-center mx-auto">
+                    <input type="text" placeholder="Enter title..." id="artworkTitle" class="mb-2 inputTitle" required>
+                    <input type="date" placeholder="Enter date..." id="artworkDate" class="mb-2 inputDate" required>
+                </div>
+            </div>
+            <hr class="modal-line">
+            <!-- <div class="modal-body">
+                <img src="./images/01/1.jpg" alt="" id="artworkImage" class="img-fluid mb-3">
+                <p id="artworkDescription"></p>
+            </div> -->
+            <div class="modal-body" id="artworkImagesContainer">
+                <!-- Images will be inserted here dynamically -->
+            </div>
+
+            <hr class="modal-line">
+            <div class="modal-footer">
+                <button class="clear-btn" id="clearBtn"><i class="fa-solid fa-xmark"
+                    style="font-size: 15px; margin-right: 5px;"></i>
+                Clear</button>
+                <button class="upload-btn" id="uploadBtn"><i class="fa-solid fa-arrow-up-from-bracket"
+                        style="font-size: 15px; margin-right: 5px;"></i>
+                    Upload</button>
             </div>
         </div>
     </div>
