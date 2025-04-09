@@ -34,29 +34,49 @@ $(document).ready(function () {
         $("#artworkModalDate").text(date); // Change modal date
 
         // AJAX Request to Fetch Images from Folder
-        $.ajax({
-            url: "index.php",
-            method: "GET",
-            data: { folder: folder }, // Send folder name to PHP
-            success: function (response) {
-                let images = JSON.parse(response);
-                let container = $("#artworkImagesContainer");
-                container.empty(); // Clear previous images
+        // $.ajax({
+        //     url: "index.php",
+        //     method: "GET",
+        //     data: { folder: folder }, // Send folder name to PHP
+        //     success: function (response) {
+        //         let images = JSON.parse(response);
+        //         let container = $("#artworkImagesContainer");
+        //         container.empty(); // Clear previous images
 
-                if (images.length === 0) {
-                    container.append(`<p>No images found.</p>`);
-                } else {
-                    images.forEach((imgSrc) => {
-                        container.append(`<img src="${imgSrc}" class="img-fluid mb-3" style="width: 100%;">`);
-                    });
-                }
+        //         if (images.length === 0) {
+        //             container.append(`<p>No images found.</p>`);
+        //         } else {
+        //             images.forEach((imgSrc) => {
+        //                 container.append(`<img src="${imgSrc}" class="img-fluid mb-3" style="width: 100%;">`);
+        //             });
+        //         }
 
+        //         $("#artworkModal").modal("show"); // Show modal
+        //     },
+        //     error: function () {
+        //         console.log("Error fetching images.");
+        //     }
+        // });
+
+        fetch(`https://api.github.com/repos/thuolala/artworks/contents/${folder}?ref=master`)
+            .then(response => response.json())
+            .then(files => {
+                let container = document.getElementById("artworkImagesContainer");
+                container.innerHTML = "";
+
+                files.forEach(file => {
+                    if (file.name.match(/\.(jpg|jpeg|png)$/i)) { // Only images
+                        let img = document.createElement("img");
+                        img.src = file.download_url;
+                        img.classList.add("img-fluid", "mb-3");
+                        img.style.width = "100%";
+                        container.appendChild(img);
+                    }
+                });
                 $("#artworkModal").modal("show"); // Show modal
-            },
-            error: function () {
-                console.log("Error fetching images.");
-            }
-        });
+            })
+            .catch(error => console.log("Error fetching images:", error));
+
     });
 
     // Close modal events
