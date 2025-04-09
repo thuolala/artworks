@@ -1,9 +1,10 @@
 /* COLOR */
 :root {
-    --accent-color: #ffff; /* Default orange */
+    --accent-color: #ffff;
+    /* Default orange */
 }
 
-.colorBtn{
+.colorBtn {
     position: fixed;
     top: 100px;
     right: 20px;
@@ -129,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-.searchBar{
+.searchBar {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -149,7 +150,7 @@ body {
     background-color: #3a3938;
 }
 
-#searchInput{
+#searchInput {
     outline: none;
     box-shadow: none;
     border-color: transparent;
@@ -208,6 +209,7 @@ body {
 .login-btn:hover {
     box-shadow: 5px 5px 10px var(--accent-color);
 }
+
 /*--------------END--------------*/
 
 /*--------------INFO--------------*/
@@ -239,7 +241,7 @@ body {
 /*--------------END--------------*/
 
 /*--------------CARD--------------*/
-.artworkDisplay{
+.artworkDisplay {
     width: 300px;
     height: 400px;
     margin: auto;
@@ -253,7 +255,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: start; /* Ensures the grid aligns left */
+    justify-content: start;
+    /* Ensures the grid aligns left */
     align-items: start;
 }
 
@@ -278,7 +281,7 @@ body {
     color: var(--accent-color);
 }
 
-#addArtworkCard{
+#addArtworkCard {
     cursor: pointer;
     border-radius: 10px;
     border: 3px dashed #8f8d8b;
@@ -319,12 +322,13 @@ body {
     margin-left: 10px;
 }
 
-.addArtwork{
+.addArtwork {
     color: #8f8d8b;
     font-size: 50px;
     text-align: center;
     margin: auto;
 }
+
 /*--------------END--------------*/
 
 /*--------------MODAL--------------*/
@@ -368,7 +372,7 @@ body {
     background-color: var(--accent-color);
 }
 
-.modal-title{
+.modal-title {
     font-size: clamp(15px, 4vw, 30px);
     color: var(--accent-color);
     text-align: center;
@@ -444,7 +448,7 @@ body {
     box-shadow: 5px 5px 10px var(--accent-color);
 }
 
-.inputTitle{
+.inputTitle {
     font-size: clamp(15px, 4vw, 30px);
     outline: none;
     box-shadow: none;
@@ -456,18 +460,18 @@ body {
     padding: 10px;
 }
 
-.inputTitle:hover{
+.inputTitle:hover {
     background-color: #3a3938;
 }
 
-.inputTitle:focus{
+.inputTitle:focus {
     border-color: transparent;
     background-color: #3a3938;
     outline: none !important;
     border: none !important;
 }
 
-.inputDate{
+.inputDate {
     font-size: clamp(12px, 4vw, 15px);
     outline: none;
     box-shadow: none;
@@ -478,6 +482,7 @@ body {
     padding: 10px;
     cursor: pointer;
 }
+
 /*--------------END--------------*/
 
 /*--------------PAGINATION--------------*/
@@ -488,7 +493,8 @@ body {
     align-items: center;
 }
 
-.pagination button, .pagination .page-number {
+.pagination button,
+.pagination .page-number {
     background-color: var(--accent-color);
     color: #252423;
     border: none;
@@ -518,11 +524,26 @@ body {
     padding: 0 8px;
     font-weight: bold;
 }
+
+/*--------------END--------------*/
+
+/*--------------FOOTER--------------*/
+.footer-text {
+    text-align: center;
+    color: #8f8d8b;
+}
+
+.footer-text:hover {
+    color: var(--accent-color);
+}
+
 /*--------------END--------------*/
 
 /*--------------SCREEN SIZE--------------*/
 
-@media (max-width: 1280px) { /* 768px */
+@media (max-width: 1280px) {
+
+    /* 768px */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -557,7 +578,7 @@ body {
         display: flex;
     }
 
-    .searchBar{
+    .searchBar {
         width: auto;
     }
 
@@ -565,4 +586,5 @@ body {
         display: block;
     } */
 }
+
 /*--------------END--------------*/
