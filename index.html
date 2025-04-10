@@ -48,8 +48,9 @@
 </div>
 <audio id="audio1" src="./sound/sound1.wav"></audio>
 <audio id="audio2" src="./sound/sound2.wav"></audio>
+<audio id="audio3" src="./sound/sound3.wav"></audio>
 <div class="achiveText" id="achiveText" style="display: none;">
-    <span style="text-align: center; vertical-align: middle; line-height: 70px;">Reading + 1</span>
+    <span style="text-align: center; vertical-align: middle; line-height: 70px;" id="showText"></span>
 </div>
 
 <body>
@@ -118,35 +119,6 @@
                 </div>
             </div>
 
-            <!-- <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
-                <div class="card">
-                    <img src="./images/04/01.png" alt="Artwork 4">
-                    <h3 class="card-title">Random</h3>
-                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
-                </div>
-            </div>
-            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
-                <div class="card">
-                    <img src="./images/04/01.png" alt="Artwork 4">
-                    <h3 class="card-title">Random</h3>
-                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
-                </div>
-            </div>
-            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
-                <div class="card">
-                    <img src="./images/04/01.png" alt="Artwork 4">
-                    <h3 class="card-title">Random</h3>
-                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
-                </div>
-            </div>
-            <div class="artworkDisplay" data-title="Random" data-date="Ongoing" data-folder="./images/04">
-                <div class="card">
-                    <img src="./images/04/01.png" alt="Artwork 4">
-                    <h3 class="card-title">Random</h3>
-                    <p class="card-desc"><i class="fa-solid fa-calendar-days"></i> Ongoing</p>
-                </div>
-            </div> -->
-
             <div class="artworkDisplay" onclick="uploadArtwork()">
                 <div class="card" id="addArtworkCard">
                     <i class="fa-solid fa-plus addArtwork"></i>
@@ -212,6 +184,30 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!--PEN SECTION-->
+    <div class="info">
+        <h5 class="welcome">
+            Pick up your pen and draw pookie :3
+        </h5>
+        <hr class="line">
+    </div>
+    <div class="container-fluid" id="fun">
+        <div class="row pen-row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 fun-pen">
+                <img src="./pen1.png">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 fun-pen">
+                <img src="./pen2.png">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 fun-pen">
+                <img src="./pen3.png">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 fun-pen">
+                <img src="./pen4.png">
+            </div>
         </div>
     </div>
 

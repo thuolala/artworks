@@ -101,7 +101,7 @@ $(document).ready(function () {
                     }
                 });
                 $("#artworkModal").modal("show"); // Show modal
-                showAchievement(); // Show achievement message
+                showAchievement("Reading + 1"); // Show achievement message
             })
             .catch(error => console.log("Error fetching images:", error));
 
@@ -117,11 +117,23 @@ $(document).ready(function () {
             $("#artworkModal").modal("hide");
         }
     });
+
+
+    document.querySelectorAll(".fun-pen img").forEach(img => {
+        img.addEventListener("click", () => {
+            let audio = document.getElementById("audio3");
+            audio.currentTime = 0; // Restart sound if already playing
+            audio.play(); // Play sound
+            showAchievement("Skill + 1"); // Show achievement message
+        });
+    });
 });
 
-function showAchievement() {
+function showAchievement(text) {
     let achiveText = document.getElementById("achiveText");
     achiveText.style.display = "flex"; // Show the element
+    let showText = document.getElementById("showText");
+    showText.innerHTML = text; // Default text if none provided
 
     // Reset animation (forces a reflow)
     achiveText.classList.remove("animate");

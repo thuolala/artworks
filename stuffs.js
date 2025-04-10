@@ -5,8 +5,8 @@ function rickRoll() {
   openLOLModal();
 }
 
-function playAudio() {
-  let audio = document.getElementById("audio2");
+function playAudio(audioID) {
+  let audio = document.getElementById(audioID);
   audio.play();
 }
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
   });
 
   $(".card").click(function () {
-    playAudio();
+    playAudio("audio2");
   });
 });
 
