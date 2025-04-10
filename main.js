@@ -101,6 +101,7 @@ $(document).ready(function () {
                     }
                 });
                 $("#artworkModal").modal("show"); // Show modal
+                showAchievement(); // Show achievement message
             })
             .catch(error => console.log("Error fetching images:", error));
 
@@ -117,6 +118,21 @@ $(document).ready(function () {
         }
     });
 });
+
+function showAchievement() {
+    let achiveText = document.getElementById("achiveText");
+    achiveText.style.display = "flex"; // Show the element
+
+    // Reset animation (forces a reflow)
+    achiveText.classList.remove("animate");
+    void achiveText.offsetWidth;
+    achiveText.classList.add("animate");
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+        achiveText.style.display = "none";
+    }, 3000);
+}
 
 function uploadArtwork() {
     $("#uploadModal").modal("show"); // Show modal

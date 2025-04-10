@@ -9,7 +9,8 @@
 .fence {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(15, 1fr); /* Adjust for more/less squares */
+    grid-template-columns: repeat(15, 1fr);
+    /* Adjust for more/less squares */
     grid-template-rows: repeat(5, 1fr);
     margin: auto;
     background-color: transparent;
@@ -25,8 +26,8 @@
     width: fit-content;
     height: fit-content;
     background-size: 50px 50px;
-    background-image: linear-gradient(transparent 49px, black 50px), 
-                      linear-gradient(90deg, transparent 49px, black 50px);
+    background-image: linear-gradient(transparent 49px, black 50px),
+        linear-gradient(90deg, transparent 49px, black 50px);
     opacity: 0.3;
 }
 
@@ -82,17 +83,17 @@
     align-items: center;
 }
 
-#facebookContainer{
+#facebookContainer {
     top: clamp(50px, 10vw, 100px);
     left: 35%;
 }
 
-#instagramContainer{
+#instagramContainer {
     top: clamp(70px, 10vw, 200px);
     left: 55%;
 }
 
-#githubContainer{
+#githubContainer {
     top: clamp(30px, 10vw, 50px);
     left: 75%;
 }
@@ -132,6 +133,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -140,7 +142,8 @@
 .square {
     width: clamp(20px, 5vw, 50px);
     height: clamp(20px, 5vw, 50px);
-    border: 1px dashed var(--accent-color); /* Makes the square visible */
+    border: 1px dashed var(--accent-color);
+    /* Makes the square visible */
     opacity: 0.5;
 }
 
@@ -247,6 +250,65 @@
 .backToTop-btn:hover {
     box-shadow: 5px 5px 10px var(--accent-color);
     opacity: 1;
+}
+
+.achiveText {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--accent-color);
+    border: 1px dashed var(--accent-color);
+    border-radius: 10px;
+    width: fit-content;
+    height: 50px;
+    /* Ensures it wraps content correctly */
+    font-size: clamp(15px, 4vw, 20px);
+    cursor: pointer;
+    z-index: 3000;
+    opacity: 0.8;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.3s ease;
+    padding: 10px 50px;
+    line-height: 1;
+}
+
+/* Top-down animation */
+@keyframes top-down {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(50px);
+    }
+}
+
+/* Blinking effect */
+@keyframes blink {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Combine both animations */
+.animate {
+    animation: top-down 0.5s ease-in-out forwards, blink 1s infinite 0.5s;
+    /* The blink starts after 0.5s */
 }
 
 * {
