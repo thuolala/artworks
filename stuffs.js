@@ -37,3 +37,19 @@ function openLOLModal() {
       }
   });
 }
+
+// Letter Modal
+function openLetterModal() {
+  $("#letterModal").modal("show"); // Show modal
+
+  // Close modal events
+  $("#closeBtn, .close").click(function () {
+      $("#letterModal").modal("hide");
+  });
+
+  $(document).on("click", function (event) {
+      if ($(event.target).hasClass("modal")) {
+          $("#letterModal").modal("hide");
+      }
+  });
+}
